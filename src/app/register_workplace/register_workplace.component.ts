@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'register-workplace',
+  selector: 'pnl-login',
   templateUrl: './register_workplace.component.html',
 })
 export class RegisterWorkplaceComponent {

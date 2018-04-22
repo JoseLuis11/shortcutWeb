@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'login-owner',
+  selector: 'pnl-login',
   templateUrl: './login_owner.component.html',
 })
 export class LoginOwnerComponent {
