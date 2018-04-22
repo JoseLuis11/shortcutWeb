@@ -2,16 +2,17 @@
   <div class="" id="">
     <h1 class=""><b>Registro de negocios.</b></h1>
     <p>Ingresa la información de tu negocio para registrarlo.</p>
-    <form action="" method="post" target="_self">
       <div class="">
         <label>Nombre</label>
-        <input type="hidden" name="id" value="">
-        <input class="" type="text" name="Name" placeholder="Ingresa el nombre del negocio" required>
+        <input class="" type="text" [(ngModel)]="workplace.name" placeholder="Ingresa el nombre del negocio" required>
       </div>
       <div class="">
         <label>Dirección</label>
-        <input class="" type="text" name="Address" placeholder="Ingresa la dirección" required>
+        <input class="" type="text" [(ngModel)]="workplace.address" placeholder="Ingresa la dirección" required>
       </div>
-      <button type="submit" class="">Entrar</button>
-    </form>  
+      <div class="">
+        <label>Número de teléfono</label>
+        <input class="" type="tel" [(ngModel)]="workplace.phoneNumber" placeholder="Ingresa el número de teléfono" required>
+      </div>
+      <button (click)="registerWorkplace()" [disabled]="workplace.address == null || workplace.name == null || workplace.phoneNumber.length<10" class="">Registrar</button>
   </div>
