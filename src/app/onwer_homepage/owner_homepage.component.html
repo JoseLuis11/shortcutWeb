@@ -1,49 +1,38 @@
-
-<body>
-
-
-
-<!-- !PAGE CONTENT! -->
 <div>
-
-
-<!-- Employees -->
-<div >
     <hr>
-    <h1 id="employees"><b>Empleados.</b></h1>
+    <h1 id="employees">
+        <b>Empleados.</b>
+    </h1>
     <div>
-       <!-- <?php include("../includes/show_employees.php");?> -->
     </div>
     <br>
     <div>
-            <form  method="post" target="_self">
-            <input type="hidden" name="id" value="<?php echo $login_id;?>">
-            <select name="employee" required >
-        <!--  <?php include("../includes/list_employeesToOwner.php");?> -->
-        </select>
-        <br>
+        <form method="post" target="_self">
+            <input type="hidden" name="id">
+            <select name="employee" required>
+            </select>
+            <br>
             <button type="submit">Dar de baja empleado</button>
-            </form>
+        </form>
     </div>
 
-<!-- Workplaces -->
     <div class="container">
         <hr>
-        <h1 id="workplaces"><b>Negocios.</b></h1>
+        <h1 id="workplaces">
+            <b>Negocios.</b>
+        </h1>
         <div class="card">
-          <!--  <?php include("../includes/show_workplaces.php");?> -->
         </div>
         <br>
-       
-    </div>
 
-<!-- Appointments -->
+    </div>
 
     <div class="container">
         <hr>
-        <h1 id="appointments"><b>Citas agendadas.</b></h1>
+        <h1 id="appointments">
+            <b>Citas agendadas.</b>
+        </h1>
         <div class="card">
-          <!--  <?php include("../includes/show_appointments.php");?>  -->
         </div>
-    
+
     </div>
