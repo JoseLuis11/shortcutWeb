@@ -1,6 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 //components
 import { OwnerHomepageComponent, RegisterEmployeeComponent, RegisterWorkplaceComponent, LoginOwnerComponent, RegisterOwnerComponent } from './index.pages'
@@ -27,6 +28,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'owner-home', component: OwnerHomepageComponent },
       { path: 'register-employee', component: RegisterEmployeeComponent },
