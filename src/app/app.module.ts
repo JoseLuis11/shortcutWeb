@@ -15,18 +15,25 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OwnerHomepageComponent,
+    RegisterEmployeeComponent,
+    RegisterWorkplaceComponent,
+    LoginOwnerComponent,
+    RegisterOwnerComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
     RouterModule.forRoot([
       { path: 'owner-home', component: OwnerHomepageComponent },
       { path: 'register-employee', component: RegisterEmployeeComponent },
-      { path: 'register-workplace', component: RegisterWorkplaceComponent},
-      { path: 'login-owner', component: LoginOwnerComponent},
+      { path: 'register-workplace', component: RegisterWorkplaceComponent },
+      { path: 'login-owner', component: LoginOwnerComponent },
       { path: 'register-owner', component: RegisterOwnerComponent },
-      { path: '', redirectTo: 'login-owner'}
+      //{ path: '', redirectTo: 'login-owner'}
     ])
   ],
   providers: [],
