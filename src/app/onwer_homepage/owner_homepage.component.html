@@ -4,10 +4,10 @@
         <b>Negocios</b>
     </h1>
     <div class="w3-row-padding">
-        <div *ngFor="let workplace of filteredWorkplaces | async" class="w3-col m4 w3-margin-bottom">
+        <div *ngFor="let workplace of workplaces  | async" class="w3-col m4 w3-margin-bottom">
             <div class="w3-white w3-card">
                 <img src="/assets/img/barbershop_cover.jpg" style="width: 100%">
-                <div class="w3-container">
+                <div class="w3-container movie-container">
                     <h3>
                         <b>{{workplace.name}}</b>
                     </h3>
@@ -16,7 +16,7 @@
                         <br>
                         <b>Dirección: </b> {{workplace.address}}</p>
                     <p>
-                        <button (click)="showEmployees(workplace.k)" class="w3-button w3-dark-grey w3-block">Ver empleados</button>
+                        <button [routerLink]="['/employees', workplace.k]"  class="w3-button w3-dark-grey w3-block">Ver empleados</button>
                     </p>
                 </div>
             </div>
