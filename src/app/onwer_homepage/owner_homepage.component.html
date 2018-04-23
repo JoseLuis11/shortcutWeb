@@ -3,7 +3,7 @@
         <b>Negocios</b>
     </h1>
     <div class="w3-third w3-margin-bottom">
-        <div *ngFor="let workplace of filteredWorkplaces | async"  class="w3-card-4">
+        <div *ngFor="let workplace of filteredWorkplaces | async" class="w3-card-4">
             <img src="/assets/img/barbershop_cover.jpg" style="width:100%">
             <div class="w3-container">
                 <h3>{{workplace.name}}</h3>
@@ -24,9 +24,17 @@
     <h1 class="w3-xxlarge w3-text">
         <b>Citas agendadas.</b>
     </h1>
-    <div class="w3-responsive w3-card-4">
-        <!-- Add appointments -->
-        hola
+    <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4">
+            <div class="w3-container">
+                <p>
+                    <b id="all-caps">Nombre del cliente</b><br>
+                    <b>Fecha y hora: </b> 646 174 32 63<br>
+                    <b>Lugar: </b> Estetica XXX<br>
+                    <b>Servicios: </b> Corte de pelo<br>
+                    <b>Total: </b> $1000</p>
+            </div>
+        </div>
     </div>
     <br>
 </div>
