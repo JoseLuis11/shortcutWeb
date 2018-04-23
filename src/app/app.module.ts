@@ -31,7 +31,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireDatabaseModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'owner-home', component: OwnerHomepageComponent },
+      { path: 'owner-homepage', component: OwnerHomepageComponent },
       { path: 'register-employee', component: RegisterEmployeeComponent },
       { path: 'register-workplace', component: RegisterWorkplaceComponent },
       { path: 'login-owner', component: LoginOwnerComponent },
