@@ -2,6 +2,7 @@ import { AuthenticationService } from './../service/authentication.service';
 import { Owner } from './../model/owner.model';
 import { Component } from '@angular/core';
 import { UserModel } from '../model/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'register-owner',
@@ -14,7 +15,7 @@ export class RegisterOwnerComponent {
   user = {} as UserModel;
   password: string;
 
-  constructor(private authService: AuthenticationService){
+  constructor(private router: Router, private authService: AuthenticationService){
 
   }
 
@@ -31,13 +32,12 @@ export class RegisterOwnerComponent {
       console.log("Las contraseñas no coinciden. Inténtelo de nuevo.")
       console.log(this.user.password, this.password);
     } else {
-      //TODO: poner loading
-
       this.authService.createUserWithEmailAndPassword(this.user).then(result => {
         this.authService.createOwner(this.owner);
         console.log("Registrado con éxito.")
 
-        //TODO: mandar a la pagina principal de owner
+        this.router.navigate(['../login-owner']);
+        
 
       }).catch(error => {
         if (error.message.includes("The email address is badly formatted")) {

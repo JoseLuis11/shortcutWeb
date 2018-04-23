@@ -53,4 +53,19 @@ export class AuthenticationService {
 
   }
 
+  private login: boolean = false;
+
+  isLogged() {
+    return this.login;
+  }
+
+  changeState(): void {
+    if (this.login == false) {
+      this.login = true
+    } else {
+      this.login = false;
+
+    }
+  }
+
 }

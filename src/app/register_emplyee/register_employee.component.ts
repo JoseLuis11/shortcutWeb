@@ -4,6 +4,7 @@ import { Workplace } from './../model/workplace.model';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'register-employee',
@@ -18,7 +19,7 @@ export class RegisterEmployeeComponent {
   workplace : Workplace;
   workplacetRef: AngularFireObject<any>;;
 
-  constructor(private afDb: AngularFireDatabase, private afAuth: AngularFireAuth) {
+  constructor(private router: Router,private afDb: AngularFireDatabase, private afAuth: AngularFireAuth) {
 
     this.employee.firstName = '';
     this.employee.lastName = '';
@@ -26,8 +27,11 @@ export class RegisterEmployeeComponent {
     this.employee.email = '';
 
     this.afAuth.authState.subscribe(data => {
-      this.ownerId = data.uid;
-      console.log(data.uid);
+      if (data == null) {
+        this.router.navigate(['../login-owner']);
+      } else {
+        console.log(data.uid);
+      }
     });
 
     this.workplaces = afDb.list('workplaces').valueChanges();

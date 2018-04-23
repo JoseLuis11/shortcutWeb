@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Workplace } from './../model/workplace.model';
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -14,14 +15,17 @@ export class RegisterWorkplaceComponent {
   workplaces$: AngularFireList<any[]>;
 
 
-  constructor(private afAuth: AngularFireAuth, private afDb: AngularFireDatabase, private af: AngularFireDatabase) {
+  constructor(private router: Router, private afAuth: AngularFireAuth, private afDb: AngularFireDatabase, private af: AngularFireDatabase) {
     this.workplace.address = '';
     this.workplace.name = '';
     this.workplace.phoneNumber = '';
 
     this.afAuth.authState.subscribe(data => {
-      this.workplace.ownerId = data.uid;
-      console.log(data.uid);
+      if (data == null) {
+        this.router.navigate(['../login-owner']);
+      } else {
+        console.log(data.uid);
+      }
     });
   }
 

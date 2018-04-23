@@ -1,8 +1,11 @@
+import { Router } from '@angular/router';
 import { Workplace } from './../model/workplace.model';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { element } from 'protractor';
+
 
 @Component({
     selector: 'owner-homepage',
@@ -14,13 +17,16 @@ export class OwnerHomepageComponent {
     ownerId: any;
     workplaces: Observable<{}[]>;
     filteredWorkplaces: any;
-    clients: any;
-    appointments: any;
+    appointments: Observable<any[]>;
 
-    constructor(private afAuth: AngularFireAuth, private afDb: AngularFireDatabase) {
+
+    constructor(private router:Router, private afAuth: AngularFireAuth, private afDb: AngularFireDatabase) {
         this.afAuth.authState.subscribe(data => {
-            this.ownerId = data.uid;
-            console.log(data.uid);
+            if (data == null) {
+                this.router.navigate(['../login-owner']);
+              } else {
+                console.log(data.uid);
+              }
         });
 
         this.loadWorkplaces();
@@ -35,13 +41,15 @@ export class OwnerHomepageComponent {
         });
     }
 
-    loadAppointments(){
-        this.clients = this.afDb.list('clients').valueChanges();
+    loadAppointments() {
+        this.appointments = this.afDb.list('appointments').valueChanges();
 
-        this.clients.forEach(element => {
-            this.appointments.push(element.appointment);
+        this.appointments.forEach(element=>{
+            console.log(element);
         });
+    }
 
-        console.log(this.appointments);
+    showEmployees(workplaceId){
+        
     }
 }

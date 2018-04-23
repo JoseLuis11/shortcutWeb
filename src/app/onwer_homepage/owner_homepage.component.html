@@ -2,18 +2,20 @@
     <h1 class="w3-xxlarge w3-text" id="">
         <b>Negocios</b>
     </h1>
-    <div class="w3-third w3-margin-bottom">
-        <div *ngFor="let workplace of filteredWorkplaces | async" class="w3-card-4">
-            <img src="/assets/img/barbershop_cover.jpg" style="width:100%">
-            <div class="w3-container">
-                <h3>{{workplace.name}}</h3>
-                <p>
-                    <b>Teléfono: </b> {{workplace.phoneNumber}}</p>
-                <p>
-                    <b>Dirección: </b> {{workplace.address}}</p>
-                <p>
-                    <button class="w3-button w3-dark-grey w3-block">Ver empleados</button>
-                </p>
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div *ngFor="let workplace of filteredWorkplaces | async" class="w3-card-4">
+                <img src="/assets/img/barbershop_cover.jpg" style="width:100%">
+                <div class="w3-container">
+                    <h3>{{workplace.name}}</h3>
+                    <p>
+                        <b>Teléfono: </b> {{workplace.phoneNumber}}</p>
+                    <p>
+                        <b>Dirección: </b> {{workplace.address}}</p>
+                    <p>
+                        <button (click)="showEmployees(workplace.k)" class="w3-button w3-dark-grey w3-block">Ver empleados</button>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -25,14 +27,21 @@
         <b>Citas agendadas.</b>
     </h1>
     <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4">
+        <div *ngFor="let appointment of appointments | async" class="w3-card-4">
             <div class="w3-container">
                 <p>
-                    <b id="all-caps">Nombre del cliente</b><br>
-                    <b>Fecha y hora: </b> 646 174 32 63<br>
-                    <b>Lugar: </b> Estetica XXX<br>
-                    <b>Servicios: </b> Corte de pelo<br>
-                    <b>Total: </b> $1000</p>
+                    <b id="all-caps">{{(appointment)?.clientName}}</b>
+                    <br>
+                    <b>Fecha y hora: </b>{{(appointment)?.date}}
+                    <br>
+                    <b>Lo atiende: </b> {{(appointment )?.employeeName}}
+                    <br>
+                    <b>Lugar: </b>{{(appointment)?.workplaceName}}
+                    <br>
+                    <b>Servicios: </b>
+                    <a *ngFor="let service of appointment.serviceNames">{{service}}</a>
+                    <br>
+                    <b>Total: </b> ${{(appointment )?.payment}}</p>
             </div>
         </div>
     </div>
