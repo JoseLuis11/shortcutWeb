@@ -22,7 +22,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     RegisterWorkplaceComponent,
     LoginOwnerComponent,
     RegisterOwnerComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +37,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
       { path: 'register-workplace', component: RegisterWorkplaceComponent },
       { path: 'login-owner', component: LoginOwnerComponent },
       { path: 'register-owner', component: RegisterOwnerComponent },
-      //{ path: 'presentation', component: PresentationComponent },
-      //{ path: '', redirectTo: 'login-owner'}
+      { path: 'presentation', component: PresentationComponent },
+      // { path: '', redirectTo: 'login-owner'}
     ])
   ],
   providers: [],
