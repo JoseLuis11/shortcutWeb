@@ -9,6 +9,20 @@
     font-size: 20px;
 }
 
+#logo{
+    height: 110px;
+    width: 110px;
+    align-content: center;
+}
+
+#all-caps{
+    text-transform: uppercase;
+}
+
+#line-through{
+    text-decoration: line-through;
+}
+
 #input-align-left{
     text-align: left;
 }
