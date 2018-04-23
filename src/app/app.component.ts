@@ -14,12 +14,14 @@ export class AppComponent {
 
   ownerRef;
   owner;
+  isLogged: boolean = false;
 
   constructor(private afDb: AngularFireDatabase, private router: Router, private afAuth: AngularFireAuth, private authService: AuthenticationService) {
     this.afAuth.authState.subscribe(data => {
       if (data == null) {
-        console.log("no hay usuario")
+        this.isLogged = false;
       } else {
+        this.isLogged = true;
         this.ownerRef = this.afDb.object(`/owners/${data.uid}`);
       this.owner = this.ownerRef.valueChanges();
       }
@@ -46,6 +48,10 @@ export class AppComponent {
   }
   goRegister() {
     this.router.navigate(['../register-owner']);
+  }
+
+  goPresentation(){
+    this.router.navigate(['../presentation']);
   }
 
 }

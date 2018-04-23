@@ -4,15 +4,15 @@
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
     <a href="javascript:void(0)" class="w3-bar-item w3-button  w3-left w3-hide-large w3-hide-medium" onclick="w3_open()">☰</a>
-    <a href="#home" class="w3-bar-item w3-button w3-wide">SHORT + CUT</a>
+    <a (click)=goPresentation(); class="w3-bar-item w3-button w3-wide">SHORT + CUT</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-        <a (click)="goHome()" class="w3-bar-item w3-button">INICIO</a>
-        <a (click)="goRegisterWorkplace()" class="w3-bar-item w3-button">REGISTRAR NEGOCIO</a>
-        <a (click)="goRegisterEmployee()" class="w3-bar-item w3-button">REGISTRAR EMPLEADO</a>
-        <a (click)="goLogin()" class="w3-bar-item w3-button">INICIAR SESIÓN</a>
-        <a (click)="goRegister()" class="w3-bar-item w3-button">REGISTRATE</a>
-        <a (click)="logOut()" class="w3-bar-item w3-button">CERRAR SESIÓN</a>
+        <a *ngIf="isLogged"  (click)="goHome()" class="w3-bar-item w3-button">INICIO</a>
+        <a *ngIf="isLogged" (click)="goRegisterWorkplace()" class="w3-bar-item w3-button">REGISTRAR NEGOCIO</a>
+        <a *ngIf="isLogged" (click)="goRegisterEmployee()" class="w3-bar-item w3-button">REGISTRAR EMPLEADO</a>
+        <a *ngIf="!isLogged" (click)="goLogin()" class="w3-bar-item w3-button">INICIAR SESIÓN</a>
+        <a *ngIf="!isLogged" (click)="goRegister()" class="w3-bar-item w3-button">REGISTRATE</a>
+        <a *ngIf="isLogged" (click)="logOut()" class="w3-bar-item w3-button">CERRAR SESIÓN</a>
     </div>
     <div class="w3-right w3-bar-item w3-wide w3-left w3-hide-small">Hola, {{(owner | async)?.firstName}}</div>
   </div>
@@ -23,12 +23,12 @@
   <!-- <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a> -->
   <br>
   <div class="w3-bar-item w3-wide">Hola, {{(owner | async)?.firstName}}</div>
-  <a (click)="goHome()" class="w3-bar-item w3-button">INICIO</a>
-      <a (click)="goRegisterWorkplace()" class="w3-bar-item w3-button">REGISTRAR NEGOCIO</a>
-      <a (click)="goRegisterEmployee()" class="w3-bar-item w3-button">REGISTRAR EMPLEADO</a>
-      <a (click)="goLogin()" class="w3-bar-item w3-button">INICIAR SESIÓN</a>
-      <a (click)="goRegister()" class="w3-bar-item w3-button">REGISTRATE</a>
-      <a (click)="logOut()" class="w3-bar-item w3-button">CERRAR SESIÓN</a>
+  <a *ngIf="isLogged" (click)="goHome()" class="w3-bar-item w3-button">INICIO</a>
+      <a *ngIf="isLogged" (click)="goRegisterWorkplace()" class="w3-bar-item w3-button">REGISTRAR NEGOCIO</a>
+      <a *ngIf="isLogged" (click)="goRegisterEmployee()" class="w3-bar-item w3-button">REGISTRAR EMPLEADO</a>
+      <a *ngIf="!isLogged" (click)="goLogin()" class="w3-bar-item w3-button">INICIAR SESIÓN</a>
+      <a *ngIf="!isLogged" (click)="goRegister()" class="w3-bar-item w3-button">REGISTRATE</a>
+      <a *ngIf="isLogged" (click)="logOut()" class="w3-bar-item w3-button">CERRAR SESIÓN</a>
 </nav>
 
 <div class="main-content">
