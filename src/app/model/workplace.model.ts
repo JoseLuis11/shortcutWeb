@@ -1,5 +1,5 @@
 export class Workplace {
-    $key?: string;
+    k: string;
     name: string;
     address: string;
     ownerId: string;

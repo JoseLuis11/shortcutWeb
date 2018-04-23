@@ -14,5 +14,5 @@
         <label>Número de teléfono</label>
         <input class="" type="tel" [(ngModel)]="workplace.phoneNumber" placeholder="Ingresa el número de teléfono" required>
       </div>
-      <button (click)="registerWorkplace()" [disabled]="workplace.address == null || workplace.name == null || workplace.phoneNumber.length<10" class="">Registrar</button>
+      <button (click)="registerWorkplace()" [disabled]="workplace.address == null || workplace.name == null || workplace.phoneNumber.length!=10" class="">Registrar</button>
   </div>

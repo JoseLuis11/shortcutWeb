@@ -18,32 +18,22 @@ export class RegisterWorkplaceComponent {
     this.workplace.address = '';
     this.workplace.name = '';
     this.workplace.phoneNumber = '';
-    //this.workplaces$ = this.af.list('/workplaces').push;
-
 
     this.afAuth.authState.subscribe(data => {
       this.workplace.ownerId = data.uid;
       console.log(data.uid);
-      //this.product = this.productRef.valueChanges();
     });
   }
 
   registerWorkplace() {
-
-    const customersRef = this.af.list('/workplaces');
-
-    customersRef.push(this.workplace);
-    /*
-    this.workplaces$.child(this.workplace).then(() => {
-        
-      this.notify(this.product.name, this.product.expiredDate);
-      this.navCtrl.pop();
-    }).catch(error => {
-      this.showToast("Algo salió mal, intentalo de nuevo.");
-      console.log(error);
-    });*/
+    const workplacesRef = this.af.list('/workplaces');
+    workplacesRef.push(this.workplace).then(ref=>{
+      this.workplace.k = ref.key;
+      this.afDb.object(`workplaces/${ref.key}`).set(this.workplace).then(() => {
+      }).catch(error => {
+        console.log(error);
+      })  
+    });
   }
-
-
 
 }
