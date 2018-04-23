@@ -9,6 +9,10 @@
     font-size: 20px;
 }
 
+#input-align-left{
+    text-align: left;
+}
+
 #div-container{
     max-width: 80%;
     margin: auto;
