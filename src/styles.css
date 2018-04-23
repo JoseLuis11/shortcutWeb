@@ -19,6 +19,10 @@
     text-transform: uppercase;
 }
 
+#line-through{
+    text-decoration: line-through;
+}
+
 #input-align-left{
     text-align: left;
 }
