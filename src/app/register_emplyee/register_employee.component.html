@@ -1,22 +1,38 @@
 <!-- Register employee -->
-<div id="register">
-    <h1>
+<div class="w3-container w3-content" id="register">
+    <h1 class="w3-xxlarge w3-text">
         <b>Registro de empleados.</b>
     </h1>
     <p>Ingresa la información de tus empleados para registrarlos.</p>
-    <label>Nombre</label>
+    <div class="w3-section">
+        <label>Nombre</label>
     <input type="text" [(ngModel)]="employee.firstName" placeholder="Ingresa tu nombre" required>
-    <label>Apellidos</label>
-    <input type="text" [(ngModel)]="employee.lastName" placeholder="Ingresa tus apellidos" required>
-    <label>Teléfono</label>
-    <input type="text" [(ngModel)]="employee.phoneNumber" placeholder="Ingresa tu número de teléfono" required>
-    <label>Correo electrónico</label>
-    <input type="email" [(ngModel)]="employee.email" placeholder="Ingresa tu dirección de correo electrónico" required>
+    </div>
+    <div class="w3-section">
+        <label>Apellidos</label>
+        <input type="text" [(ngModel)]="employee.lastName" placeholder="Ingresa tus apellidos" required>
+    </div>
+    <div class="w3-section">
+        <label>Teléfono</label>
+        <input type="text" [(ngModel)]="employee.phoneNumber" placeholder="Ingresa tu número de teléfono" required>
+    </div>
+   
+    <div class="w3-section">
+        <label>Correo electrónico</label>
+        <input type="email" [(ngModel)]="employee.email" placeholder="Ingresa tu dirección de correo electrónico" required>
+    </div>
+    
+    <div class="w3-section">
+        <label>Sucursal</label>
+        <select [(ngModel)]="workplace" class="w3-select">
+            <option [ngValue]="workp" *ngFor="let workp of filteredWorkplaces | async">{{workp.name}}</option>
+        </select>
+    </div>
+    
 
-    <label>Sucursal</label>
-    <select [(ngModel)]="workplace" class="w3-select">
-        <option [ngValue]="workp" *ngFor="let workp of filteredWorkplaces | async">{{workp.name}}</option>
-    </select>
-
-    <button (click)="registerEmployee()" [disabled]="employee.email == '' || employee.firstName == '' ||  employee.lastName == '' || employee.phoneNumber.length!=10 || workplace == undefined  "
-        class="">Registrar</button>
+    <div class="w3-section">
+    <button class="w3-button w3-block w3-padding-large w3-black w3-margin-bottom" (click)="registerEmployee()" [disabled]="employee.email == '' || employee.firstName == '' ||  employee.lastName == '' || employee.phoneNumber.length!=10 || workplace == undefined ">
+        Registrar
+    </button>
+    </div>
+</div>
