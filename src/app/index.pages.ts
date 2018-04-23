@@ -4,3 +4,4 @@ export { RegisterWorkplaceComponent } from './register_workplace/register_workpl
 export { LoginOwnerComponent } from './login_owner/login_owner.component';
 export { RegisterOwnerComponent } from './register_owner/register_owner.component';
 export { PresentationComponent } from './presentation/presentation.component';
+export { EmployeesComponent } from './employees/employees.component';
