@@ -38,8 +38,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
       { path: 'login-owner', component: LoginOwnerComponent },
       { path: 'register-owner', component: RegisterOwnerComponent },
       { path: 'presentation', component: PresentationComponent },
-      { path: 'employees', component: EmployeesComponent },
-      // { path: '', redirectTo: 'login-owner'}
+      { path: 'employees/:id', component: EmployeesComponent },
+      { path: '', redirectTo:'login-owner', pathMatch:'full'},
     ])
   ],
   providers: [],

@@ -47,6 +47,7 @@ export class RegisterEmployeeComponent {
 
     employeesRef.push(this.employee).then( ref=>{
       this.afDb.object(`workplaces/${this.workplace.k}/employees/${ref.key}`).set(this.employee).then(() => {
+        this.router.navigate(['../owner-homepage']);
       }).catch(error => {
         console.log(error);
       })  

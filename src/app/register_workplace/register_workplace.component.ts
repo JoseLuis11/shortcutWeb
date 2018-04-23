@@ -24,19 +24,21 @@ export class RegisterWorkplaceComponent {
       if (data == null) {
         this.router.navigate(['../login-owner']);
       } else {
-        console.log(data.uid);
+        this.ownerId = data.uid;
       }
     });
   }
 
   registerWorkplace() {
     const workplacesRef = this.af.list('/workplaces');
-    workplacesRef.push(this.workplace).then(ref=>{
+    workplacesRef.push(this.workplace).then(ref => {
       this.workplace.k = ref.key;
+      this.workplace.ownerId = this.ownerId;
       this.afDb.object(`workplaces/${ref.key}`).set(this.workplace).then(() => {
+        this.router.navigate(['../owner-homepage']);
       }).catch(error => {
         console.log(error);
-      })  
+      })
     });
   }
 

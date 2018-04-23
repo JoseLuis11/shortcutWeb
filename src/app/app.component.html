@@ -7,13 +7,14 @@
     <a href="#home" class="w3-bar-item w3-button w3-wide">SHORT + CUT</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button">TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button">WORK</a>
-      <a href="#pricing" class="w3-bar-item w3-button">PRICING</a>
-      <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+        <a (click)="goHome()" class="w3-bar-item w3-button">INICIO</a>
+        <a (click)="goRegisterWorkplace()" class="w3-bar-item w3-button">REGISTRAR NEGOCIO</a>
+        <a (click)="goRegisterEmployee()" class="w3-bar-item w3-button">REGISTRAR EMPLEADO</a>
+        <a (click)="goLogin()" class="w3-bar-item w3-button">INICIAR SESIÓN</a>
+        <a (click)="goRegister()" class="w3-bar-item w3-button">REGISTRATE</a>
+        <a (click)="logOut()" class="w3-bar-item w3-button">CERRAR SESIÓN</a>
     </div>
-    <div class="w3-right w3-bar-item w3-wide w3-left w3-hide-small">Hola, Felipe Ortega</div>
+    <div class="w3-right w3-bar-item w3-wide w3-left w3-hide-small">Hola, {{(owner | async)?.firstName}}</div>
   </div>
 </div>
 
@@ -21,12 +22,13 @@
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <!-- <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a> -->
   <br>
-  <div class="w3-bar-item w3-wide">Hola, Felipe Ortega</div>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  <div class="w3-bar-item w3-wide">Hola, {{(owner | async)?.firstName}}</div>
+  <a (click)="goHome()" class="w3-bar-item w3-button">INICIO</a>
+      <a (click)="goRegisterWorkplace()" class="w3-bar-item w3-button">REGISTRAR NEGOCIO</a>
+      <a (click)="goRegisterEmployee()" class="w3-bar-item w3-button">REGISTRAR EMPLEADO</a>
+      <a (click)="goLogin()" class="w3-bar-item w3-button">INICIAR SESIÓN</a>
+      <a (click)="goRegister()" class="w3-bar-item w3-button">REGISTRATE</a>
+      <a (click)="logOut()" class="w3-bar-item w3-button">CERRAR SESIÓN</a>
 </nav>
 
 <div class="main-content">

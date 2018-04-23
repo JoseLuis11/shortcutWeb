@@ -25,7 +25,7 @@
     <div class="w3-section">
         <label>Sucursal</label>
         <select [(ngModel)]="workplace" class="w3-select">
-            <option [ngValue]="workp" *ngFor="let workp of filteredWorkplaces | async">{{workp.name}}</option>
+            <option [ngValue]="workp" *ngFor="let workp of workplaces | async">{{(workp)?.name}}</option>
         </select>
     </div>
     

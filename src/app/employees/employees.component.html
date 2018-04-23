@@ -1,14 +1,14 @@
 <div class="w3-container w3-content">
     <h1 class="w3-xxlarge w3-text">
-        <b>Empleados del negocio tu culo.</b>
+        <b>Empleados del negocio {{ (workplace | async)?.name }}.</b>
     </h1>
     <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4">
+        <div *ngFor="let employee of employees  | async"  class="w3-card-4">
             <div class="w3-container">
                 <p>
-                    <b id="all-caps">Nombre del empleado</b>
+                    <b id="all-caps">{{employee.firstname + employee.lastName}}</b>
                     <br>
-                    <b>Tel: </b> 646 174 32 63
+                    <b>Tel: </b> {{employee.phoneNumber}}
                     <br>
             </div>
         </div>
