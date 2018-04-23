@@ -4,15 +4,15 @@
     <p>Ingresa la información de tu negocio para registrarlo.</p>
       <div class="w3-section">
         <label>Nombre</label>
-        <input class="w3-input w3-border" id="input-30" type="text" [(ngModel)]="workplace.name" placeholder="Ingresa el nombre del negocio" required>
+        <input class="w3-input w3-border " type="text" [(ngModel)]="workplace.name" placeholder="Ingresa el nombre del negocio" required>
       </div>
       <div class="w3-section">
         <label>Dirección</label>
-        <input class="w3-input w3-border" id="input-30" type="text" [(ngModel)]="workplace.address" placeholder="Ingresa la dirección" required>
+        <input class="w3-input w3-border"  type="text" [(ngModel)]="workplace.address" placeholder="Ingresa la dirección" required>
       </div>
       <div class="w3-section">
         <label>Número de teléfono</label>
-        <input class="w3-input w3-border" id="input-30" type="tel" [(ngModel)]="workplace.phoneNumber" placeholder="Ingresa el número de teléfono" required>
+        <input class="w3-input w3-border"  type="tel" [(ngModel)]="workplace.phoneNumber" placeholder="Ingresa el número de teléfono" required>
       </div>
       <button (click)="registerWorkplace()" [disabled]="workplace.address == null || workplace.name == null || workplace.phoneNumber.length<10" class="w3-button w3-block w3-padding-large w3-black w3-margin-bottom">Registrar</button>
   </div>
