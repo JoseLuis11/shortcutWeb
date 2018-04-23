@@ -1,38 +1,35 @@
 <div>
-  <div>
-    <h1 ><b>S H O R T + C U T</b></h1>
-  </div>
 
   <!-- Register owner -->
-  <div>
-    <h1><b>Registro.</b></h1>
+  <div class="w3-container w3-content">
+    <h1 class="w3-xxlarge w3-text"><b>Registro</b></h1>
     <p>Ingresa tu información para registrarte.</p>
-      <div>
+      <div class="w3-section">
         <label>Nombre</label>
-        <input type="text" name="Name" [(ngModel)]="owner.firstName" placeholder="Ingresa tu nombre" required>
+        <input class="w3-input w3-border" type="text" name="Name"  [(ngModel)]="owner.firstName" placeholder="Ingresa tu nombre" required>
       </div>
-      <div>
+      <div class="w3-section">
         <label>Apellidos</label>
-        <input type="text" name="LastName" [(ngModel)]="owner.lastName" placeholder="Ingresa tus apellidos" required>
+        <input class="w3-input w3-border" type="text" name="LastName" [(ngModel)]="owner.lastName" placeholder="Ingresa tus apellidos" required>
       </div>
-      <div>
+      <div class="w3-section">
         <label>Teléfono</label>
-        <input type="text" name="Phone" [(ngModel)]="owner.phoneNumber" placeholder="Ingresa tu número de teléfono" required>
+        <input class="w3-input w3-border"  type="text" name="Phone" [(ngModel)]="owner.phoneNumber" placeholder="Ingresa tu número de teléfono" required>
       </div>
-      <div>
+      <div class="w3-section">
         <label>Correo electrónico</label>
-        <input type="text" name="Email" [(ngModel)]="user.email" placeholder="Ingresa tu dirección de correo electrónico" required>
+        <input class="w3-input w3-border" type="text" name="Email" [(ngModel)]="user.email" placeholder="Ingresa tu dirección de correo electrónico" required>
       </div>
-      <div>
+      <div class="w3-section">
         <label>Contraseña</label>
-        <input type="password" [(ngModel)]="user.password" placeholder="Ingresa tu contraseña"  required>
+        <input class="w3-input w3-border" type="password" [(ngModel)]="user.password" placeholder="Ingresa tu contraseña"  required>
       </div>
-      <div>
+      <div class="w3-section">
         <label>Repite contraseña</label>
-        <input type="password" [(ngModel)]="password" name="Password2" placeholder="Ingresa tu contraseña otra vez" required>
+        <input class="w3-input w3-border" type="password" [(ngModel)]="password" name="Password2" placeholder="Ingresa tu contraseña otra vez" required>
         <div id="nameValidation" class="validation-image"></div>
       </div>  
-      <button (click)="addOwner()">Registrar</button>  
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-black w3-margin-bottom" (click)="addOwner()">Registrar</button>  
   </div>
 
 </div>
