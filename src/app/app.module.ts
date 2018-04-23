@@ -4,7 +4,7 @@ import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 //components
-import { OwnerHomepageComponent, RegisterEmployeeComponent, RegisterWorkplaceComponent, LoginOwnerComponent, RegisterOwnerComponent, PresentationComponent, EmployeesComponent } from './index.pages'
+import { OwnerHomepageComponent, RegisterEmployeeComponent, RegisterWorkplaceComponent, LoginOwnerComponent, RegisterOwnerComponent,  EmployeesComponent } from './index.pages'
 import { AppComponent } from './app.component';
 
 //firebase
@@ -22,7 +22,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     RegisterWorkplaceComponent,
     LoginOwnerComponent,
     RegisterOwnerComponent,
-    PresentationComponent,
     EmployeesComponent
   ],
   imports: [
@@ -37,7 +36,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
       { path: 'register-workplace', component: RegisterWorkplaceComponent },
       { path: 'login-owner', component: LoginOwnerComponent },
       { path: 'register-owner', component: RegisterOwnerComponent },
-      { path: 'presentation', component: PresentationComponent },
+      //{ path: 'presentation', component: PresentationComponent },
       //{ path: '', redirectTo: 'login-owner'}
     ])
   ],
