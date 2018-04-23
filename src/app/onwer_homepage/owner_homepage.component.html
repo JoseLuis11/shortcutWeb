@@ -3,14 +3,14 @@
         <b>Negocios</b>
     </h1>
     <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4">
+        <div *ngFor="let workplace of filteredWorkplaces | async"  class="w3-card-4">
             <img src="/assets/img/barbershop_cover.jpg" style="width:100%">
             <div class="w3-container">
-                <h3>Negocio 1</h3>
+                <h3>{{workplace.name}}</h3>
                 <p>
-                    <b>Teléfono: </b> (646) 172-35-56</p>
+                    <b>Teléfono: </b> {{workplace.phoneNumber}}</p>
                 <p>
-                    <b>Dirección: </b> Blvd. Cuauhtemoc 113, Colinas del Mar</p>
+                    <b>Dirección: </b> {{workplace.address}}</p>
                 <p>
                     <button class="w3-button w3-dark-grey w3-block">Ver empleados</button>
                 </p>
