@@ -1,18 +1,22 @@
-      <!-- Register employee -->
-      <div id="register">
-        <h1><b>Registro de empleados.</b></h1>
-        <p>Ingresa la información de tus empleados para registrarlos.</p>
-            <label>Nombre</label>
-            <input type="text" name="Name" placeholder="Ingresa tu nombre" required>
-            <label>Apellidos</label>
-            <input type="text" name="LastName" placeholder="Ingresa tus apellidos" required>
-            <label>Teléfono</label>
-            <input type="text" name="Phone" placeholder="Ingresa tu número de teléfono" required>
-            <label>Correo electrónico</label>
-            <input type="email" name="Email" placeholder="Ingresa tu dirección de correo electrónico" required>
-    
-                <button>Elige la sucursal</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Buscar.." id="myInput">
-                </div>
+<!-- Register employee -->
+<div id="register">
+    <h1>
+        <b>Registro de empleados.</b>
+    </h1>
+    <p>Ingresa la información de tus empleados para registrarlos.</p>
+    <label>Nombre</label>
+    <input type="text" [(ngModel)]="employee.firstName" placeholder="Ingresa tu nombre" required>
+    <label>Apellidos</label>
+    <input type="text" [(ngModel)]="employee.lastName" placeholder="Ingresa tus apellidos" required>
+    <label>Teléfono</label>
+    <input type="text" [(ngModel)]="employee.phoneNumber" placeholder="Ingresa tu número de teléfono" required>
+    <label>Correo electrónico</label>
+    <input type="email" [(ngModel)]="employee.email" placeholder="Ingresa tu dirección de correo electrónico" required>
 
+    <label>Sucursal</label>
+    <select [(ngModel)]="workplace" class="w3-select">
+        <option [ngValue]="workp" *ngFor="let workp of filteredWorkplaces | async">{{workp.name}}</option>
+    </select>
+
+    <button (click)="registerEmployee()" [disabled]="employee.email == '' || employee.firstName == '' ||  employee.lastName == '' || employee.phoneNumber.length!=10 || workplace == undefined  "
+        class="">Registrar</button>

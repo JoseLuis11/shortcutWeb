@@ -2,18 +2,18 @@
 <body>
 
   <!-- Login owner -->
-  <div id="login">
-    <h1><b>Inicio de sesión.</b></h1>
-      <div>
+  <div class="w3-container w3-content" id="login">
+    <h1 class="w3-xxlarge w3-text"><b>Inicio de sesión.</b></h1>
+      <div class="w3-section">
         <label>Correo electrónico</label>
-        <input type="email" name="Email" [(ngModel)]="user.email" placeholder="Ingresa tu dirección de correo electrónico" required>
+        <input class="w3-input w3-border"  type="email" name="Email" [(ngModel)]="user.email" placeholder="Ingresa tu dirección de correo electrónico" required>
       </div>
-      <div>
+      <div class="w3-section">
         <label>Contraseña</label>
-        <input type="password" name="Password" [(ngModel)]="user.password" placeholder="Ingresa tu contraseña" required>
+        <input class="w3-input w3-border" type="password" name="Password" [(ngModel)]="user.password" placeholder="Ingresa tu contraseña" required>
       </div>
-      <button (click)="login()">Ingresar</button>
-    <p>No estas registrado? <a>Registrate Aquí</a>!</p>
+      <a href="#home"><button  type="submit" (click)="login()" class="w3-button w3-block w3-padding-large w3-black w3-margin-bottom" >Ingresar</button> </a>
+    <p class="w3-section">No estas registrado? <a href="register-owner">Registrate Aquí</a>!</p>
   </div>
 
 
