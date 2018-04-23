@@ -4,7 +4,7 @@ import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 //components
-import { OwnerHomepageComponent, RegisterEmployeeComponent, RegisterWorkplaceComponent, LoginOwnerComponent, RegisterOwnerComponent,  EmployeesComponent } from './index.pages'
+import { OwnerHomepageComponent, RegisterEmployeeComponent, RegisterWorkplaceComponent, LoginOwnerComponent, RegisterOwnerComponent,  EmployeesComponent, PresentationComponent } from './index.pages'
 import { AppComponent } from './app.component';
 
 //firebase
