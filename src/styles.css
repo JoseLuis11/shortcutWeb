@@ -7,7 +7,23 @@
     margin-top: 40px;
     font-family:'Muli',sans-serif;
     font-size: 20px;
-    text-align: center;
+}
+
+#div-container{
+    max-width: 80%;
+    margin: auto;
+}
+
+#main-title{
+    font-family: 'Lato', sans-serif;
+}
+
+#main-subtitle{
+    font-family: 'Muli', sans-serif;
+}
+
+#display-image{
+    padding: 50px;
 }
 
 .keep-footer-down{
@@ -17,8 +33,10 @@
     height:250px;
 }
 
-#input-30{
-    width: 30%;   
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
 }
 
 /*w3 original*/
@@ -195,7 +213,7 @@ h6{
     font-family:serif
 }
  h1,h2,h3,h4,h5,h6{
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:"Lato",sans-serif;
     font-weight:400;
     margin:10px 0
 }
@@ -504,10 +522,6 @@ a{
     width:99.99999%
 }
  @media (min-width:601px){
-    #main-content{
-        margin-left: 30%;
-        margin-right: 30%;
-    }
     .w3-col.m1{
         width:8.33333%
     }
@@ -584,7 +598,7 @@ a{
     }
 }
  .w3-content{
-    max-width:680px;
+    max-width:980px;
     margin:auto
 }
 .w3-rest{
