@@ -504,6 +504,10 @@ a{
     width:99.99999%
 }
  @media (min-width:601px){
+    #main-content{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
     .w3-col.m1{
         width:8.33333%
     }
@@ -580,7 +584,7 @@ a{
     }
 }
  .w3-content{
-    max-width:980px;
+    max-width:680px;
     margin:auto
 }
 .w3-rest{
