@@ -7,7 +7,7 @@
         <div *ngFor="let workplace of workplaces  | async" class="w3-col m4 w3-margin-bottom">
             <div class="w3-white w3-card">
                 <img src="/assets/img/barbershop_cover.jpg" style="width: 100%">
-                <div class="w3-container movie-container">
+                <div class="w3-container movie-container-2">
                     <h3>
                         <b>{{workplace.name}}</b>
                     </h3>
@@ -33,7 +33,7 @@
     <div class="w3-row-padding">
         <div *ngFor="let appointment of appointments | async" class="w3-col m4 w3-margin-bottom">
             <div class="w3-white w3-card">
-                <div class="w3-container movie-container">
+                <div class="w3-container movie-container-2">
                     <p>
                         <b id="all-caps">{{(appointment)?.clientName}}</b>
                         <br>

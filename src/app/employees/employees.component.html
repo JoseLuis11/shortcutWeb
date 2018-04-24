@@ -6,7 +6,7 @@
         <div *ngFor="let employee of employees  | async"  class="w3-card-4">
             <div class="w3-container">
                 <p>
-                    <b id="all-caps">{{employee.firstName + employee.lastName}}</b>
+                    <b id="all-caps">{{employee.firstName}}&nbsp;{{employee.lastName}}</b>
                     <br>
                     <b>Tel: </b> {{employee.phoneNumber}}
                     <br>
