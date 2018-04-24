@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Owner } from './../model/owner.model';
 import { Injectable } from '@angular/core';
+
 
 //angular fire imports
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -15,7 +17,7 @@ export class AuthenticationService {
 
   user: User;
 
-  constructor(private afAuth: AngularFireAuth, private afDb: AngularFireDatabase) {
+  constructor(private afAuth: AngularFireAuth, private afDb: AngularFireDatabase, private router: Router) {
     afAuth.authState.subscribe((user: User) => {
       this.user = user;
     });
@@ -66,6 +68,17 @@ export class AuthenticationService {
       this.login = false;
 
     }
+  }
+
+  checkLogin() {
+    
+    this.afAuth.authState.subscribe(data => {
+      if (data == null) {
+        return false;
+      } else {
+        return true;
+      }
+    });
   }
 
 }
