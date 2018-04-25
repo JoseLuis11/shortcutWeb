@@ -48,4 +48,15 @@ export class OwnerHomepageComponent {
     showEmployees(id) {
         this.router.navigate(['/employees', id]);
     }
+
+    onDeleteAppointment(id){
+        console.log(id);
+
+        const customers = this.afDb.object(`/appointments/${id}`);
+        customers.remove().then(()=>{
+            console.log("Eliminado con éxito")
+        }).catch(error =>{
+            console.log(error);
+        });
+    }
 }

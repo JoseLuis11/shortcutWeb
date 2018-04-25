@@ -33,7 +33,7 @@
     <div class="w3-row-padding">
         <div *ngFor="let appointment of appointments | async" class="w3-col m4 w3-margin-bottom">
             <div class="w3-white w3-card">
-                <div class="w3-container movie-container-2">
+                <div class="w3-container movie-container">
                     <p>
                         <b id="all-caps">{{(appointment)?.clientName}}</b>
                         <br>
@@ -49,6 +49,10 @@
                             <br>{{service}}</a>
                         <br>
                         <b>Total: </b> ${{(appointment )?.payment}}</p>
+
+                        <p>
+                            <button (click)="onDeleteAppointment(appointment.k)"  class="w3-button w3-dark-grey w3-block">Cancelar cita</button>
+                        </p>
                 </div>
             </div>
         </div>
